@@ -8,6 +8,7 @@ import Menu from './Menu/Menu';
 import Modal from './Modal/Modal';
 import Todo from './Todo/Todo';
 import TodoList from './Todo/TodoList';
+import TodoFrom from './TodoForm/TodoForm';
 
 export {
     Button,
@@ -19,5 +20,6 @@ export {
     Menu,
     Modal,
     Todo,
-    TodoList
+    TodoList,
+    TodoFrom
 }
