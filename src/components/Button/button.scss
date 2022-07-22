@@ -1,0 +1,22 @@
+@import "../../styles/base.scss";
+.button {
+    background: $white_color;
+    border-radius: 50px;
+    width: 315px;
+    height: 48px;
+
+    font-family: "Helvetica";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $placeholder_color;
+    cursor: pointer;
+    &:hover {
+        background-color: $black_color;
+        color: $white_color;
+    }
+}

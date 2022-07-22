@@ -1,0 +1,21 @@
+.input {
+    min-width: 295px;
+    height: 48px;
+    border: none;
+
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+
+    display: flex;
+    align-items: flex-end;
+
+    margin: 20px 0;
+    padding: 0 10px;
+    outline: none;
+    border-bottom: 2px solid black;
+
+    &:hover {
+        cursor: pointer;
+    }
+}
