@@ -1,0 +1,12 @@
+@import "../../styles/base.scss";
+
+.error {
+    margin-top: 20px;
+    background-color: $error_color;
+    color: $white_color;
+    padding: 10px;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: center;
+}
