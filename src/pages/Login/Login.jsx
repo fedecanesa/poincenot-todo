@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from "react-router-dom";
 import { loginFail, loginSuccess, loginPending } from '../../features/login/loginSlice';
@@ -17,6 +17,7 @@ const Login = () => {
     const { isLoading, error } = useSelector((state) => state?.login);
     const [user, setUser] = useState('');
     const navigate = useNavigate();
+    const userRef = useRef()
 
     const handlerInput = (e) => {
         const { target: { value } } = e;
@@ -31,7 +32,6 @@ const Login = () => {
         dispatch(loginPending());
         try {
             const { data, status, statusText } = await getAllTodosService(user);
-            console.log(data)
             if (status === 200) {
                 dispatch(login(user))
                 dispatch(loginSuccess());
@@ -45,51 +45,54 @@ const Login = () => {
         }
     }
 
+    useEffect(() => {
+        userRef.current.focus();
+    }, [])
+
     return (
-        <div className="login">
-            <div className='login__titleContainer'>
-                <Title>Login</Title>
-                <img src={logo} alt="Logo" />
-            </div>
-            {
-                isLoading
-                    ? <Loader />
-                    : <div className='login__formContainer'>
-                        <form
-                            onSubmit={handleSubmit}
-                        >
-                            <Input
+        <main className="login">
+            <section className='login__container'>
+
+                <div className='login__titleContainer'>
+                    <Title>Login</Title>
+                    <img src={logo} alt="Logo" />
+                </div>
+                {
+                    isLoading
+                        ? <Loader />
+                        :
+                        <form onSubmit={handleSubmit}>
+
+                            {/*  <label htmlFor='user'>UserId</label> */}
+                            <input
                                 type="text"
-                                value={user}
-                                onChange={handlerInput}
                                 placeholder="Ingresa tu userId..."
                                 name="login_input"
+                                id="userId"
+                                ref={userRef}
+                                autoComplete="off"
+                                onChange={handlerInput}
+                                value={user}
+                                required
                             />
+
                             {
                                 (error && user.length > 0) &&
-                                <Error variant="danger">{error}</Error>
+                                <Error>{error}</Error>
                             }
-                            {
-                                user.length > 0 && (
-                                    <Button
-                                        type="submit"
-                                        content="Login"
-                                        disabled={false}
-                                        name="login_submit"
-                                    />
-                                )
-                            }
+                            <button type="submit">Login</button>
                         </form>
-                    </div>
-            }
-            <div className='login__toRegister'>
-                <p>
-                    ¿No estas registrado? <span>  </span>
-                    <a href={routesEnum.REGISTER}>Crea una cuenta aca</a>
-                </p>
-            </div>
 
-        </div>
+                }
+
+                <p>
+                    ¿No estas registrado? <br />
+                    <span className='login__footer'>
+                        <a href={routesEnum.REGISTER}>Crear userID</a>
+                    </span>
+                </p>
+            </section>
+        </main>
     )
 }
 

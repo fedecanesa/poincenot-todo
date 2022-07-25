@@ -1,32 +1,96 @@
+@import "../../styles/base.scss";
+
 .login {
-    width: 100vw;
-    height: 100vh;
-    margin: 60px 0;
-    .login__titleContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 1rem 0.5rem;
+
+    .login__container {
         width: 100%;
+        max-width: 420px;
+        min-height: 400px;
         display: flex;
-        justify-content: center;
-        align-items: center;
-        img {
-            margin-left: 10px;
-        }
-    }
-    .login__formContainer {
-        width: 100%;
-        min-height: 350px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    .login__toRegister {
-        display: flex;
-        justify-content: center;
-        width: 100%;
-        margin: auto;
-        p {
+        flex-direction: column;
+        justify-content: flex-start;
+        padding: 1rem 3rem;
+        background-color: $background_page;
+        border-radius: 50px;
+
+        .login__titleContainer {
             display: flex;
+            padding: 25px;
             justify-content: center;
-            min-width: 900px;
+            img {
+                margin-left: 10px;
+            }
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            flex-grow: 1;
+            padding-bottom: 1rem;
+
+            input[type="text"] {
+                font-size: 18px;
+                //padding: 0.25rem;
+                border-radius: 0.5rem;
+
+                width: 315px;
+                height: 48px;
+                border: none;
+
+                font-style: normal;
+                font-weight: 700;
+                font-size: 20px;
+
+                display: flex;
+                align-items: flex-end;
+
+                outline: none;
+                padding: 0.5rem;
+                background-color: transparent;
+
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+
+            label,
+            button {
+                margin-top: 1rem;
+            }
+
+            button {
+                padding: 0.5rem;
+                background: $white_color;
+                border-radius: 50px;
+                width: 315px;
+                height: 48px;
+
+                font-family: "Helvetica";
+                font-style: normal;
+                font-weight: 400;
+                font-size: 18px;
+                line-height: 18px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: none;
+                color: $black_color;
+                cursor: pointer;
+                &:hover {
+                    background-color: $black_color;
+                    color: $white_color;
+                }
+            }
+        }
+        .login__footer {
+            display: inline-block;
         }
     }
 }
