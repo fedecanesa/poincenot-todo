@@ -6,7 +6,7 @@ import {
     getUserFail,
 } from '../../features/user/userSlice';
 import { registerService } from '../../services/register.service';
-import { Button, Error, Input, Loader, Title } from '../../components';
+import { Error, Loader, Title } from '../../components';
 import { routesEnum } from '../../constants/routesEnum';
 import { logo } from '../../utils/images';
 import PropTypes from 'prop-types';
@@ -35,50 +35,50 @@ const Register = () => {
     }
 
     return (
-        <div className='register'>
-            <div className='register__titleContainer'>
-                <Title>Registro</Title>
-                <img src={logo} alt="Logo" />
-            </div>
-            {
-                user &&
-                <div className='register__userIdContainer'>
-                    <p>Tu número de userId es <br /><b> {user}</b> <br /> y esta copiado en tu portapapeles</p>
-                </div>
-            }
+        <main className='register'>
+            <section className='register__container'>
 
-            {
-                isLoading
-                    ? <Loader />
-                    : <div className='register__formContainer'>
+                <div className='register__titleContainer'>
+                    <Title>Registro</Title>
+                    <img src={logo} alt="Logo" />
+                </div>
+                {
+                    isLoading
+                        ? <Loader />
+                        :
                         <form
                             onSubmit={generateUser}
                             className='register__form'
                         >
                             {
-                                (error && user.length > 0) &&
-                                <Error variant="danger">{error}</Error>
+                                user &&
+                                <p className='register__userIdContainer'>
+                                    <span>Tu número de userId es <br /><b> {user}</b> <br /> y esta copiado en tu portapapeles</span>
+                                </p>
                             }
-                            <Button
-                                type="submit"
-                                content="Genera un userId"
-                                disabled={false}
-                                name="register_submit"
-                            />
 
+                            {
+                                (error && user.length > 0) &&
+                                <Error>{error}</Error>
+                            }
+                            <button type="submit">Generar userID</button>
                         </form>
-                    </div >
-            }
-            <div className='register__toLogin'>
+                }
+
                 <p>
-                    ¿Ya tenes userId? <span>  </span>
-                    <a href={routesEnum.LOGIN}>Ingresa aca</a>
+                    ¿Ya tenes userId?  <br />
+                    <span className='register__footer'>
+                        <a href={routesEnum.LOGIN}>Ingresa aca</a>
+                    </span>
                 </p>
-            </div>
-        </div >
+
+            </section>
+        </main >
     )
 }
 
-Register.propTypes = {}
+Register.propTypes = {
+    generateUser: PropTypes.func.isRequired
+}
 
 export default Register;

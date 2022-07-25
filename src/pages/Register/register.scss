@@ -1,50 +1,71 @@
+@import "../../styles/base.scss";
 .register {
-    width: 100vw;
-    height: 100vh;
-    margin: 60px 0;
-    .register__titleContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 1rem 0.5rem;
+
+    .register__container {
         width: 100%;
+        max-width: 420px;
+        min-height: 400px;
         display: flex;
-        justify-content: center;
-        align-items: center;
-        img {
-            margin-left: 10px;
-        }
-    }
-    .register__formContainer {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        .register__form {
+        flex-direction: column;
+        justify-content: flex-start;
+        padding: 1rem 3rem;
+        background-color: $background_page;
+        border-radius: 50px;
+        .register__titleContainer {
             display: flex;
+            padding: 25px;
             justify-content: center;
-            align-items: center;
-            min-height: 200px;
+            img {
+                margin-left: 10px;
+            }
         }
-    }
-    .register__userIdContainer {
-        width: 500px;
-        min-height: 100px;
-        margin: 30px auto 0 auto;
-        p {
-            width: 100%;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding-top: 40px;
-            font-size: 20px;
-        }
-    }
-    .register__toLogin {
-        display: flex;
-        justify-content: center;
-        width: 100%;
-        margin: auto;
-        p {
+        form {
             display: flex;
-            justify-content: center;
-            min-width: 900px;
+            flex-direction: column;
+            justify-content: space-evenly;
+            flex-grow: 1;
+            padding-bottom: 1rem;
+
+            .register__userIdContainer {
+                display: flex;
+                justify-content: center;
+                text-align: center;
+                line-height: 1.5rem;
+            }
+
+            button {
+                width: 315px;
+                height: 48px;
+                margin-top: 1rem;
+                padding: 0.5rem;
+                background: $white_color;
+                border-radius: 50px;
+
+                font-family: "Helvetica";
+                font-style: normal;
+                font-weight: 400;
+                font-size: 18px;
+                line-height: 18px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: none;
+                color: $black_color;
+                cursor: pointer;
+                &:hover {
+                    background-color: $black_color;
+                    color: $white_color;
+                }
+            }
+        }
+        .register__footer {
+            display: inline-block;
         }
     }
 }
