@@ -1,0 +1,295 @@
+@import "../../styles/base.scss";
+.error__container {
+    width: 100vw;
+    height: 100vh;
+
+    .error__box {
+        width: 80%;
+        height: 900px;
+        margin: auto;
+
+        display: flex;
+
+        .error__message {
+            width: 50%;
+            height: fit-content;
+            display: block;
+            margin: auto;
+
+            .error__title {
+                background: $orage_color;
+                padding: 30px;
+                border-radius: 5px;
+                display: block;
+
+                h1 {
+                    font-size: 3em;
+                    color: white;
+                }
+            }
+
+            .error__button {
+                margin-top: 20px;
+                display: block;
+
+                a {
+                    text-decoration: none;
+                    background: $orage_color;
+                    white-space: nowrap;
+                    color: #010606;
+                    font-size: 16px;
+                    outline: none;
+                    border: none;
+                    cursor: pointer;
+                    transition: all 0.2s ease-in-out;
+                    text-decoration: none;
+                    border-radius: 4px;
+                    color: #fff;
+                    font-weight: 700;
+                    padding: 10px 20px;
+                    line-height: 1rem;
+                    text-decoration: none;
+                    margin-left: 25px;
+                    margin-top: 20px;
+
+                    &:hover {
+                        transition: all 0.2s ease-in-out;
+                        background: #ff540b94;
+                    }
+                }
+            }
+        }
+        .error__image {
+            width: 50%;
+            display: block;
+            margin: auto;
+
+            img {
+                width: 550px;
+                height: 500px;
+                margin: auto;
+                display: flex;
+            }
+        }
+    }
+}
+
+@media (max-width: 1100px) {
+    .error__container {
+        .error__box {
+            width: 80%;
+            height: 900px;
+            margin: 100px auto auto auto;
+            flex-direction: column-reverse;
+            display: flex;
+
+            .error__message {
+                width: 100%;
+                height: fit-content;
+                display: block;
+                margin: auto;
+
+                .error__title {
+                    padding: 30px;
+                    border-radius: 5px;
+                    display: block;
+
+                    h1 {
+                        font-size: 3em;
+                        color: white;
+                    }
+                }
+
+                .error__button {
+                    margin-top: 20px;
+                    display: block;
+
+                    a {
+                        text-decoration: none;
+                        background: #ff560b;
+                        white-space: nowrap;
+                        color: #010606;
+                        font-size: 16px;
+                        outline: none;
+                        border: none;
+                        cursor: pointer;
+                        transition: all 0.2s ease-in-out;
+                        text-decoration: none;
+                        border-radius: 4px;
+                        color: #fff;
+                        font-weight: 700;
+                        padding: 10px 20px;
+                        line-height: 1rem;
+                        text-decoration: none;
+                        margin-left: 25px;
+                        margin-top: 20px;
+
+                        &:hover {
+                            transition: all 0.2s ease-in-out;
+                            background: #ff560b;
+                        }
+                    }
+                }
+            }
+
+            .error__image {
+                width: 100%;
+                display: block;
+                margin: auto;
+
+                img {
+                    width: 550px;
+                    height: 500px;
+                    margin: auto;
+                    display: flex;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 800px) {
+    .error__container {
+        .error__box {
+            width: 80%;
+            height: 900px;
+            margin: 100px auto auto auto;
+            flex-direction: column-reverse;
+            display: flex;
+
+            .error__message {
+                width: 100%;
+                height: fit-content;
+                display: block;
+                margin: auto;
+
+                .error__title {
+                    padding: 30px;
+                    border-radius: 5px;
+                    display: block;
+
+                    h1 {
+                        font-size: 3em;
+                        color: white;
+                    }
+                }
+
+                .error__button {
+                    margin-top: 20px;
+                    display: block;
+
+                    a {
+                        text-decoration: none;
+
+                        white-space: nowrap;
+                        color: #010606;
+                        font-size: 16px;
+                        outline: none;
+                        border: none;
+                        cursor: pointer;
+                        transition: all 0.2s ease-in-out;
+                        text-decoration: none;
+                        border-radius: 4px;
+                        color: #fff;
+                        font-weight: 700;
+                        padding: 10px 20px;
+                        line-height: 1rem;
+                        text-decoration: none;
+                        margin-left: 25px;
+                        margin-top: 20px;
+
+                        &:hover {
+                            transition: all 0.2s ease-in-out;
+                        }
+                    }
+                }
+            }
+
+            .error__image {
+                width: 100%;
+                display: block;
+                margin: auto;
+
+                img {
+                    width: 450px;
+                    height: 400px;
+                    margin: auto;
+                    display: flex;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 500px) {
+    .error__container {
+        .error__box {
+            width: 80%;
+            height: 900px;
+            margin: 100px auto auto auto;
+            flex-direction: column-reverse;
+            display: flex;
+
+            .error__message {
+                width: 100%;
+                height: fit-content;
+                display: block;
+                margin: auto;
+
+                .error__title {
+                    padding: 30px;
+                    border-radius: 5px;
+                    display: block;
+
+                    h1 {
+                        font-size: 2em;
+                        color: white;
+                    }
+                }
+
+                .error__button {
+                    margin-top: 20px;
+                    display: block;
+
+                    a {
+                        text-decoration: none;
+
+                        white-space: nowrap;
+                        color: #010606;
+                        font-size: 16px;
+                        outline: none;
+                        border: none;
+                        cursor: pointer;
+                        transition: all 0.2s ease-in-out;
+                        text-decoration: none;
+                        border-radius: 4px;
+                        color: #fff;
+                        font-weight: 700;
+                        padding: 10px 20px;
+                        line-height: 1rem;
+                        text-decoration: none;
+                        margin-left: 25px;
+                        margin-top: 20px;
+
+                        &:hover {
+                            transition: all 0.2s ease-in-out;
+                        }
+                    }
+                }
+            }
+
+            .error__image {
+                width: 100%;
+                display: block;
+                margin: auto;
+
+                img {
+                    width: 350px;
+                    height: 300px;
+                    margin: auto;
+                    display: flex;
+                }
+            }
+        }
+    }
+}
