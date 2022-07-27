@@ -3,14 +3,19 @@ import api from '../config/axios.config';
 export const getAllTodosService = (userId) => {
     return api.get(`/todo/${userId}`)
 }
-export const deleteAllTodoService = (userId) => {
-    return api.delete(`/todo/${userId}/reset`);
-}
-export const deleteTodoService = (userId, data) => {
+export const deleteTodoService = (userId, todoToDelete) => {
     return api.delete(
         `/todo/${userId}`,
-        data
+        {
+            headers: { 'X-Requested-With': 'XMLHttpRequest' },
+            data: {
+                todoId: todoToDelete.todoId
+            }
+        }
     );
+}
+export const deleteAllTodoService = (userId) => {
+    return api.delete(`/todo/${userId}/reset`);
 }
 export const postTodoService = (userId, data) => {
     return api.post(

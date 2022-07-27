@@ -1,0 +1,39 @@
+@import "../../styles/base.scss";
+.todoForm {
+    width: 315px;
+    min-height: 113px;
+    background-color: $white_color;
+    border-radius: 20px;
+    padding: 17px 23px;
+    .todoForm__header {
+        display: flex;
+        width: 100%;
+        .todoForm__imageContainer {
+            display: flex;
+            margin-left: 10px;
+            justify-content: center;
+            align-items: center;
+            width: fit-content;
+
+            img {
+                height: 100%;
+                object-fit: contain;
+                width: 100%;
+            }
+        }
+        .todoForm__filterContainer {
+            margin-left: auto;
+            select {
+                background-color: transparent;
+                border: none;
+                padding: 0 1em 0 0;
+                margin: 0;
+                width: 120px;
+                font-family: inherit;
+                font-size: inherit;
+                cursor: pointer;
+                line-height: inherit;
+            }
+        }
+    }
+}

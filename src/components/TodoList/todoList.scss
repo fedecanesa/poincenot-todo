@@ -1,0 +1,24 @@
+/* @import "../../styles/base.scss";
+.todoList {
+    width: 315px;
+    min-height: 113px;
+    background-color: $white_color;
+    border-radius: 20px;
+    padding: 17px 23px;
+    .todoList__header {
+        display: flex;
+        .todoList__imageContainer {
+            display: flex;
+            margin-left: 10px;
+            justify-content: center;
+            align-items: center;
+            width: fit-content;
+
+            img {
+                height: 100%;
+                object-fit: contain;
+                width: 100%;
+            }
+        }
+    }
+} */
