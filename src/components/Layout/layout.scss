@@ -1,0 +1,16 @@
+@import "../../styles/base.scss";
+
+.layout {
+    background-color: $background_page;
+    width: 100vw;
+    min-height: 100vh;
+    padding-top: 100px;
+
+    .layout__container {
+        width: 315px;
+        justify-content: center;
+        margin: auto;
+        padding-top: 60px;
+        transition: 1s ease;
+    }
+}
