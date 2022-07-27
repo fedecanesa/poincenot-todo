@@ -11,7 +11,7 @@ import Modal from './Modal/Modal';
 import Title from './Title/Title';
 import Todo from './Todo/Todo';
 import TodoList from './TodoList/TodoList';
-import TodoFrom from './TodoForm/TodoForm';
+import TodoForm from './TodoForm/TodoForm';
 
 export {
     Button,
@@ -27,5 +27,5 @@ export {
     Title,
     Todo,
     TodoList,
-    TodoFrom
+    TodoForm
 }
