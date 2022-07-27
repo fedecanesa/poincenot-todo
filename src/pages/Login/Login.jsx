@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from "react-router-dom";
 import { loginFail, loginSuccess, loginPending } from '../../features/login/loginSlice';
 import { login } from '../../features/user/userSlice';
-import { getTodos } from '../../features/todos/todoSlice';
+import { successTodo } from '../../features/todos/todoSlice';
 import { getAllTodosService } from '../../services/todos.service';
 import { Button, Error, Input, Loader, Title } from '../../components';
 import { routesEnum } from '../../constants/routesEnum';
@@ -31,23 +31,25 @@ const Login = () => {
         e.preventDefault();
         dispatch(loginPending());
         try {
-            const { data, status, statusText } = await getAllTodosService(user);
+            const { data, status } = await getAllTodosService(user);
             if (status === 200) {
                 dispatch(login(user))
                 dispatch(loginSuccess());
-                dispatch(getTodos(data));
+                dispatch(successTodo(data));
+                window.localStorage.setItem('user', JSON.stringify(user));
+                window.localStorage.setItem('todos', JSON.stringify(data));
                 navigate("/inicio");
             } else {
-                return dispatch(loginFail("El userID no es valido" || statusText));
+                return dispatch(loginFail("El userID no es valido"));
             }
         } catch (error) {
-            dispatch(loginFail(error.message));
+            dispatch(loginFail("Inconvenientes en la autenticación. Por favor, intentelo nuevamente."));
         }
     }
 
     useEffect(() => {
         userRef.current.focus();
-    }, [])
+    }, []);
 
     return (
         <main className="login">
