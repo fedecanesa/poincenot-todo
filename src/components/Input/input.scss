@@ -5,15 +5,17 @@
 
     font-style: normal;
     font-weight: 700;
-    font-size: 16px;
+    font-size: 20px;
 
     display: flex;
     align-items: flex-end;
 
     margin: 20px 0;
-    padding: 0 10px;
+
     outline: none;
-    border-bottom: 2px solid black;
+
+    transition: 1s;
+    background-color: transparent;
 
     &:hover {
         cursor: pointer;

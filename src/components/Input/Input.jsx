@@ -16,7 +16,8 @@ const Input = ({
             value={value}
             name={name}
             className='input'
-            onChange={onChange}
+            onChange={(e)=>onChange(e)}
+            autocomplete={false}
         />
     )
 }
