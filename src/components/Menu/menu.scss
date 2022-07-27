@@ -1,0 +1,58 @@
+@import "../../styles/base.scss";
+.menu {
+    background-color: $background_page_modal;
+    color: $white_color;
+    height: 100px;
+    padding: 0 40px;
+    min-width: 100%;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+
+    /*flex*/
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .menu__logo {
+        height: 80px;
+        margin-top: 5px;
+        width: fit-content;
+
+        img {
+            height: 100%;
+            object-fit: contain;
+            width: 100%;
+        }
+    }
+
+    .menu__login {
+        /*flex*/
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .menu__login-text {
+            border: 1px solid $white_color;
+            border-radius: 4px;
+            color: $white_color;
+            font-weight: 600;
+            padding: 10px 20px;
+            letter-spacing: 1px;
+            text-decoration: none;
+        }
+        .menu__login-resert {
+            border-radius: 4px;
+            color: $white_color;
+            font-weight: 700;
+            padding: 10px 40px;
+            letter-spacing: 1px;
+            text-decoration: none;
+            background-color: transparent;
+            cursor: pointer;
+            border: none;   
+        }
+    }
+}
