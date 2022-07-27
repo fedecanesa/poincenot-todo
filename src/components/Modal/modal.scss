@@ -1,0 +1,79 @@
+@import "../../styles/base.scss";
+.overlay {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: $background_page_modal;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .Modal {
+        width: 314px;
+        min-height: 250px;
+        background-color: $background_page;
+        position: relative;
+        border-radius: 20px;
+        //box-shadow: $boxshdow-modal;
+        //padding: 20px 40px;
+
+        .Modal__header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 31px 0 17px 24px;
+            //border-bottom: 1px solid $border-color-modal;
+            h3 {
+                font-family: "Helvetica";
+                font-style: normal;
+                font-weight: 700;
+                font-size: 22px;
+                line-height: 25px;
+                display: flex;
+                align-items: flex-end;
+
+                color: $black_color;
+            }
+        }
+        .Modal__body {
+            .Modal__body--paragraph {
+                margin: 0 27px;
+                height: 88px;
+            }
+            .Modal__buttonContainer {
+                display: flex;
+                justify-content: space-evenly;
+                margin-top: 16px;
+
+                .button {
+                    width: 129px;
+                    height: 48px;
+                    background: $white_color;
+                    border: 1px solid $border_button;
+                    border-radius: 50px;
+
+                    font-family: "Helvetica";
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 16px;
+                    line-height: 18px;
+
+                    display: flex;
+                    align-items: center;
+                    text-align: center;
+                    font-feature-settings: "zero" on;
+
+                    color: $button_color;
+                    cursor: pointer;
+                }
+                .button__ok {
+                    background-color: $black_color;
+                    color: $white_color;
+                }
+            }
+        }
+    }
+}
