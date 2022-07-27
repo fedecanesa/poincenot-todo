@@ -1,9 +1,19 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+const getInitialUser = () => {
+    const localUser = window.localStorage.getItem('user');
+    // if todo list is not empty
+    if (localUser) {
+        return JSON.parse(localUser);
+    }
+    window.localStorage.setItem('user', '');
+    return [];
+};
+
 const userSlice = createSlice({
     name: "user",
     initialState: {
-        user: "",
+        user: getInitialUser(),
         isLoading: false,
         error: "",
     },
